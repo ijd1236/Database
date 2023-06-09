@@ -40,7 +40,43 @@
 ![image](https://github.com/ijd1236/Database/assets/130967884/bc7e50c0-ef6f-46de-a5dc-5742e5f8218b)
 
 
-- 이외의 것들은 건들지 말고 데이터 베이스 생성을 클릭합니다.
+- 이외의 것들은 건들지 말고 데이터 베이스 생성을 클릭합니다.(생성까지 10분정도 소요)
+
+![20230609_110455](https://github.com/ijd1236/Database/assets/130967884/16d96133-43c8-44ef-902a-ac62bb584578)
+
+- 이후 RDS에 다시 들어가면 DB인스턴스가 1개가 있다고 나오며
+
+![20230609_110505](https://github.com/ijd1236/Database/assets/130967884/a4cff7f0-a0bb-416a-8893-71ff51f69703)
+
+-데이터 베이스가 설치된걸 볼 수 있습니다.
+
+## MySQL Workbench
+
+- MySQL Workbench은 오라클에서 개발한 시각적인 데이터베이스 디자인 및 관리 도구입니다. 이 도구를 사용하면 MySQL 데이터베이스를 관리하기 위한 그래픽 인터페이스를 제공하여 사용자가 데이터베이스 스키마, 테이블 및 데이터를 쉽게 생성, 구성 및 조작할 수 있습니다.
+
+- 설치 사이트 https://dev.mysql.com/downloads/workbench/
+
+![20230609_101213](https://github.com/ijd1236/Database/assets/130967884/b428ab10-1312-4876-9bd9-0872413946fb)
+
+
+![20230609_101225](https://github.com/ijd1236/Database/assets/130967884/5031ba94-388f-4207-9083-490afc6f81cb)
+
+
+- 에러가 발생하 C+(2019)가 설치되어 있어야한다고 나온다면
+- https://learn.microsoft.com/ko-KR/cpp/windows/latest-supported-vc-redist?view=msvc-170 여기 사이트에 접속하여
+ ![image](https://github.com/ijd1236/Database/assets/130967884/717c33b5-b7fb-47be-b2a9-ab2190eb0c95) 해당 파일을 설치합니다.
+
+![image](https://github.com/ijd1236/Database/assets/130967884/74a598bc-9b02-45b5-82c5-5e5554d4ac58)
+
+- 정상적으로 설치된 MySQL Workbench 입니다.
+
+- AWS에 만든 데이터 베이스로 접속해야 합니다.
+![20230609_104905](https://github.com/ijd1236/Database/assets/130967884/024c81fb-aa25-40db-ab3c-d561b7746e12)
+![20230609_104916](https://github.com/ijd1236/Database/assets/130967884/247cf4b9-bb09-42b2-bdb7-f0ba8c98094b)
+
+
+
+
 
 
 
