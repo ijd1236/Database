@@ -22,10 +22,12 @@
 
 - 프론트 티어를 선택해야합니다.
 
+![20230609_110228](https://github.com/ijd1236/Database/assets/130967884/6fcbf688-08fb-4098-a178-8169b1469dc3)
 
 ![image](https://github.com/ijd1236/Database/assets/130967884/f5f8ccaf-cb80-45a4-a61d-3905e6d1e93b)
 
-- 암호를 설정해주고
+
+- 사용자 이름과 암호를 설정해주고
 
 ![image](https://github.com/ijd1236/Database/assets/130967884/bb55ae81-1ad4-45d4-b502-31ea27a9c179)
 
