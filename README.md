@@ -73,10 +73,33 @@
 - AWS에 만든 데이터 베이스로 접속해야 합니다.
 ![20230609_104905](https://github.com/ijd1236/Database/assets/130967884/024c81fb-aa25-40db-ab3c-d561b7746e12)
 ![20230609_104916](https://github.com/ijd1236/Database/assets/130967884/247cf4b9-bb09-42b2-bdb7-f0ba8c98094b)
+![image](https://github.com/ijd1236/Database/assets/130967884/3711c1d6-ef94-4ddc-8fbb-5a740b2f93b1)
+![20230609_105204](https://github.com/ijd1236/Database/assets/130967884/80558b13-7eac-4ddc-8b8e-37301913795b)
+![20230609_105220](https://github.com/ijd1236/Database/assets/130967884/09bb11a5-21a8-4ed0-ae61-93fa5d980d6e)
+
+- 엔드포인트는 AWS 데이터베이스에 연결 & 보안 부분에 존재합니다
+- 포트 번호도 맞춰줘야합니다 이후 ok 버튼을 눌렀는데 생성이 되지 않는다면 방화벽 문제일 가능성이 높습니다.
+- 이 경우 AWS DB에서 방화벽 설정을 해야합니다
 
 
+![20230609_112711](https://github.com/ijd1236/Database/assets/130967884/dcd1c601-8440-430c-bf59-38a90d029786)
+
+- VPC DB에 보안그룹 클릭
+
+![20230609_112724](https://github.com/ijd1236/Database/assets/130967884/11b07c50-95a8-4f6b-93f6-b8df7e7e2e60)
 
 
+- 인바운드 규칙 편집
+
+![20230609_112816](https://github.com/ijd1236/Database/assets/130967884/26b7f6f7-ed99-45cc-9162-5e0dd5380bf1)
+
+- 규칙추가 -> 유형에 MYSQL/Aurora 를 선택 후 저장 (MySQL/Aurora 가 없으면 사용자 지정으로 포트번호를 맞춰 저장합니다)
+- 이후 MySQL Workbench에서 ok를 누르면
+
+
+![image](https://github.com/ijd1236/Database/assets/130967884/6f3ea1fc-6c94-4eeb-8bdc-ea5007db1fef)
+
+- 성공적으로 생성된걸 볼 수 있습니다.
 
 
 
