@@ -172,7 +172,63 @@ from books;
 ```
 - 해당 코드를 입력하면 중복된 값을 제외한 데이터를 출력합니다.
 
-#### 
+#### order by 키워드
+- order by 는 데이터를 정렬해주는 키워드입니다
+- order by 키둬드의 위치는 항상 from 아래에 위치해야합니다
+
+```SQL
+select *
+from books
+order by author_lname;
+```
+- 해당 코드를 입력하면 author_lname의 열 데이터로 오름차순으로 정렬됩니다.
+- oder by 키워드는 기본적으로 오름차순(asc) 가 생략되어 있습니다. 만약 내림차순을 원한다면 열 이름 뒤에 desc를 붙여 실행하면 됩니다.
+
+#### limit 키워드
+- 데이터를 끊어서 가져올 때 사용하는 키워드 입니다
+```SQL
+select *
+from books
+limit 0, 5;
+```
+![image](https://github.com/ijd1236/Database/assets/130967884/d152e344-ff5c-4168-94bf-22dc8f4cca74)
+- 해당 코드를 입력하면 딱 5개의 행만 출력됩니다.
+- limit 처음에 입력하는 값은 가져올 위치이고 두번째로 입력하는 값음 가져올 갯수입니다
+- 위의 코드는 0,5를 적었으므로 첫번째부터 5개의 데이터를 가져옵니다.
+
+#### like 키워드
+
+- like 키워드는 문자열 안에 찾고 있는 데이터를 찾아 출력하는 키워드 입니다.
+
+```SQL
+select *
+from books
+where title like '%the%';
+```
+![image](https://github.com/ijd1236/Database/assets/130967884/916eef64-2c40-418d-ab13-3e291de29be5)
+
+- 해당 코드를 입력하면 title 데이터 안에 'the'가 들어간 데이터만 찾아 출력합니다
+- %를 한개만 입력하고 위치를 조절하여 해당 문자로 시작하는, 혹은 끝나는 데이터도 찾을 수 있습니다
+- 위의 코드에서 where title like 'the%' 라고 입력하면 the로 시작하는 데이터를 의미하며 where title like '%the'를 입력하면 끝나는 데이터를 의미합니다.
+
+- like 키워드는 찾고 싶은 문자뿐만 아니라 숫자의 자릿수도 찾아 출력할 수 있습니다.
+- 찾고 싶은 자릿수를 선택할땐 _ 를 사용합니다. 
+-  _ 의 자릿수에 따라 찾고 싶은 자릿수가 결정됩니다.
+
+```SQL
+select *
+from books
+where stock_quantity like '__' ;
+```
+
+- 해당 코드를 _ 가 2개 입력되었으니 2자리 숫자를 찾아서 출력합니다.
+
+
+
+
+
+
+
 
 
 
