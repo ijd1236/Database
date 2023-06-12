@@ -56,6 +56,7 @@ from shirts
 where color = 'off white';
 ```
 - 해당 코드는 shirts 테이블에서 where color 가 'off white'인 모든 열의 데이터를 출력합니다.
+- 조건문 뒤에 or , and로 이어서 조건을 추가 할 수 있습니다.
 
 #### 데이터 수정(update)
 - update 와 set을 사용하여 테이블내 데이터를 수정할 수 있습니다.
