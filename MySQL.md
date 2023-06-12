@@ -82,6 +82,14 @@ delete from shirts;
 
 ### 문자열 데이터 다루기
 
+
+
+- 사용할 테이블 
+- 
+![image](https://github.com/ijd1236/Database/assets/130967884/214cf878-f2b0-4356-b8e9-b4eff0e1a022)
+
+
+
 - 기본적인 테이블을 보는 방법은 
 ```SQL
 select *(열 이름 선택, *은 모든 열 선택)
@@ -89,12 +97,64 @@ from books(테이블이름)
 ```
 - 이렇게 출력하면 테이블내 모든 데이터를 볼 수 있습니다.
 
+#### replace
+- 문자열의 내용을 바꾸는 함수입니다
+```SQL
+select replace(title, 'The', '' ), pages, author_fname
+from books;
+```
+- 해당 코드를 입력하면 title의 'The' 문자를 없애고 출력합니다.
+#### reberse
+- 문자열 순서를 역순으로 바꿔주는 함수입니다.
+```SQL
+select reverse( author_lname )
+from books;
+```
+- 해당 코드를 입력하면 author_lname 열의 모든 문자가 역순으로 바뀐 데이터를 출력합니다
+
+#### char_length 
+- 문자열의 갯수(길이)를 구하는 함수입니다
+- 
+
+#### concat
+
 - concat 함수를 사용하여 열과 열을 합쳐서 볼 수 있습니다
 ```SQL
 select concat(author_fname, ' ' , author_lname) as 'full name'
 from books;
 ```
 - 해당 코드를 입력하면 author_fname 열과 author_lname 열에 공백을 넣어 입력되고 열 이름이 full name인 데이터를 출력합니다.
+
+![image](https://github.com/ijd1236/Database/assets/130967884/1b89a15e-88b0-4623-86ca-b7350bc283bc)
+
+```SQL
+select concat_ws(' ', author_fname, author_lname) as full_name
+from books;
+```
+- concat_ws 를 사용하면 맨앞에 입력하는 조건을 넣어 열과 열을 연결 할 수 있습니다.
+
+#### substr
+
+```SQL
+select substr(title, 1, 10) as 'short title'
+from books;
+```
+![image](https://github.com/ijd1236/Database/assets/130967884/492f954d-3ff3-41b8-b2be-611b59b328a3)
+
+- substr 함수를 사용하여 지정한 문자열 까지만 출력하게 할 수 있습니다
+
+#### distinct 키워드로 유니크한 데이터 가져오기
+
+- 중복되는 데이터를 제외한 값을 가져오고 싶을때 사용합니다.
+```SQL
+select distinct author_lname 
+from books;
+```
+- 해당 코드를 입력하면 중복된 값을 제외한 데이터를 출력합니다.
+
+#### 
+
+
 
 
 
