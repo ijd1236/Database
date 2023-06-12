@@ -120,10 +120,11 @@ select char_length(title)
 from books;
 ```
 - 해당코드를 입력하면
+
 ![image](https://github.com/ijd1236/Database/assets/130967884/33a8e387-45d9-43de-a5a3-f6f123e32021)
 
 - title의 텍스트 갯수를 출력합니다.
-- 
+
 #### upper 과 lower
 
 - 이함수들은 각각 문자를 소문자, 대문자로 바꿉니다
@@ -223,6 +224,82 @@ where stock_quantity like '__' ;
 ```
 
 - 해당 코드를 _ 가 2개 입력되었으니 2자리 숫자를 찾아서 출력합니다.
+
+- not like를 사용하여 반대 조건을 거는것도 가능합니다.
+
+#### count
+
+- count 함수를 사용하여 갯수를 셀 수 있습니다
+```SQL
+select count(*)
+from books
+where title like "%the%";
+```
+
+![image](https://github.com/ijd1236/Database/assets/130967884/402cc20b-3467-4aa8-8f52-b85b2defc1da)
+
+- 해당 코드를 입력하면 타이틀에 the 가 들어간 데이터의 갯수를 출력합니다.
+
+#### group by 키워드
+
+- group by로 데이터 별로 묶어서 집계할 수 있습니다.
+```SQL
+select author_lname,count(*) as count
+from books
+group by author_lname;
+```
+
+- 해당 코드를 입력하면
+- author_lname 을 기준으로 묶어 해당 데이터의 count 값을 출력할 수 있습니다.
+- 
+![image](https://github.com/ijd1236/Database/assets/130967884/cfc43298-0d02-4339-bd3c-d2883c201c87)
+
+
+
+
+#### max 와 min 함수
+
+```SQL
+select  max(pages)
+from books;
+```
+- max와 min 함수를 사용하여 해당 열의 최대값과 최소값을 출력할 수 있습니다.
+
+
+#### 함수를 사용한 값과 다른 열의 값이 맞지 않는 경우
+
+- 예를 들어
+
+```SQL
+select title, max(pages)
+from books;
+```
+- 해당 코드를 실행하면
+- title 과 max(pages) 값이 서로 맞물리지 않습니다.
+
+- 함수를 사용한 데이터 값이 서로 맞물리게 하는 방법 2가지를 알아보겠습니다.
+
+##### 첫번째 방법 : 정렬해서 가져온다
+```SQL
+select title, pages
+from books
+order by pages desc
+limit 1;
+```
+- order by 키워드를 사용하여 pages 값을 내림차순으로 정렬하고 limit 키워드로 1개만 출력하게 하면 가장 많은 page 수를 가진 title을 알 수 있습니다
+
+##### 두번째 방법 : max 값을 구해서 , sub query 하는 방법
+
+```SQL
+select *
+from books
+where pages = (select max(pages) from books);
+```
+- where 조건문에 pages는 가장 높은 값을 출력하는 코드를 넣습니다
+
+
+
+
 
 
 
