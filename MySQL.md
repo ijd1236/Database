@@ -114,7 +114,27 @@ from books;
 
 #### char_length 
 - 문자열의 갯수(길이)를 구하는 함수입니다
+```SQL
+select char_length(title)
+from books;
+```
+- 해당코드를 입력하면
+![image](https://github.com/ijd1236/Database/assets/130967884/33a8e387-45d9-43de-a5a3-f6f123e32021)
+
+- title의 텍스트 갯수를 출력합니다.
 - 
+#### upper 과 lower
+
+- 이함수들은 각각 문자를 소문자, 대문자로 바꿉니다
+```SQL
+select upper(author_fname), lower(author_fname)
+from books;
+```
+
+![image](https://github.com/ijd1236/Database/assets/130967884/0bc1fcc3-66e2-4120-9c2f-460d52d7b901)
+
+- 해당 코드를 입력하면 해당 열의 문자들을 대문자, 소문자로 바꿔 출력합니다.
+
 
 #### concat
 
@@ -153,7 +173,6 @@ from books;
 - 해당 코드를 입력하면 중복된 값을 제외한 데이터를 출력합니다.
 
 #### 
-
 
 
 
