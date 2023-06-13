@@ -34,6 +34,8 @@ use yhdb(테이블이름)
 
 - 테이블내에 데이터를 넣기 위해서 insert into 테이블이름 를 사용합니다
 
+- decimar(자릿수, 소수점)
+
 ```SQL
 insert into books
 (title, author_fname, author_lname, released_year, stock_quantity,
@@ -57,6 +59,10 @@ where color = 'off white';
 ```
 - 해당 코드는 shirts 테이블에서 where color 가 'off white'인 모든 열의 데이터를 출력합니다.
 - 조건문 뒤에 or , and로 이어서 조건을 추가 할 수 있습니다.
+
+##### 결측치 찾기
+-  null 인 값을 찾는 조건: where 컬럼이름 is null
+-  null 이 아닌 값을 찾는 조건 :  where 컬럼이름 is not null
 
 #### 데이터 수정(update)
 - update 와 set을 사용하여 테이블내 데이터를 수정할 수 있습니다.
