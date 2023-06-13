@@ -1,1 +1,113 @@
+# MySQL에서 날짜 데이터를 저장하는 데이터 타입
+
+## 테이블 설정
+
+![image](https://github.com/ijd1236/Database/assets/130967884/3e566fee-095b-402f-85bf-ddba8a2bfeae)
+
+- Datatyp DATE는 1990-11-11 형태의 날짜를 입력받습니다
+- TIME은 10:07:35 형태의 시간을 입력받습니다
+- DATETIME은 1990-11-11 10:07:35 형태의 날짜와 시간을 입력받습니다
+
+### 형태 보기
+```SQL
+insert into people
+(name, birthdate, birthtime, birthdt)
+values
+('Mike' , '1990-11-11','10:07:35', '1990-11-11 10:07:35' ),
+('Larry' , '1972-12-25','04:10:42', '1972-12-25 04:10:42');
+
+select *
+from people;
+```
+- 출력결과
+
+![image](https://github.com/ijd1236/Database/assets/130967884/1aff159c-8162-46b1-9401-ea2322a199c8)
+
+- 위와 같은 형태로 출력됩니다.
+
+### 날짜 정보 가져오기
+```SQL
+select name, day(birthdate)
+from people;
+
+select name, dayname(birthdate)
+from people;
+
+select name, dayofweek(birthdate)
+from people;
+
+select name, dayofyear(birthdate)
+from people;
+
+select name, month(birthdate), birthdate
+from people;
+
+select name, birthtime, hour(birthtime), minute(birthtime), second(birthdt)
+from people;
+```
+
+- 위와 같은 코드들로
+- day(일), dayname(요일), daofweek(요일, 숫자로), dayofyear(365일중 며칠째인지 예를들어 12월25일이면 360)
+- month(월), hour,minute,second(시,분,초) 
+- 를 표시합니다.
+
+### date_fromat함수로 데이터 베이스의 저장된 시간 형식 데이터를 보기 편한 데이터로 바꾸는 법
+
+```SQL
+select name, birthdt, date_format(birthdt, '%Y년 %m월, %h시')
+from people;
+```
+- date_format 으로 1990-11-11 10 형태였던 데이터를 1990년 11월 10시 로 바꿉니다.
+
+### now 함수
+
+- 현재 시간을 가져오고 싶을때 now 함수를 사용합니다.
+```SQL
+select now();
+```
+- 해당 코드를 입력하여 날짜와 시간정보를 출력합니다.
+ 
+- 현재 년월일만 가져오고 싶을때 사용하는 curdate() 함수와
+
+- 현재 시분초만 가져오고 싶을때 사용하는 curtime() 함수도 있습니다.
+
+### 날짜, 시간의 차이 구하기
+
+#### datediff
+- dateddiff() 함수는 시간의 차이를 구하는데 사용합니다.
+```SQL
+select datediff(now() ,birthdt)
+from people;
+```
+- 해당 코드를 입력하면 birthdt와 현재 날짜의 차이를 보여줍니다.
+#### interval
+- interval을 사용하여 차이, 합 등을 구할 수 있습니다.
+```SQL
+ select birthdt, date_add(birthdt, interval 4 week)
+ from people;
+ 
+ -- 4주를 더한 값을 보여줍니다
+
+ select birthdt, date_sub(birthdt, interval 5 hour)
+ from people;
+
+--  5시간을 뺀 값을 보여줍니다
+```
+- 함수를 안써도 간단한 기호로도 만들 수 있습니다
+
+```SQL
+ select birthdt, birthdt + interval 100 day
+ from people;
+ ``` 
+ 
+ - 이렇게 기호를 사용하면 birthdt에서 100일을 더한 값을 출력합니다.
+
+```SQL
+ select birthdt, birthdt + interval 100 day + interval 21 hour
+ from people;
+ ```
+ - 뒤에 이어 붙여서 연속해서 사용하는 것도 가능합니다.
+
+
+
 
