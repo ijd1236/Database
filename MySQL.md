@@ -257,13 +257,16 @@ group by author_lname;
 
 
 
-#### max 와 min 함수
+#### max 와 min, sum, avg 함수
 
 ```SQL
 select  max(pages)
 from books;
 ```
 - max와 min 함수를 사용하여 해당 열의 최대값과 최소값을 출력할 수 있습니다.
+- avg 함수를 사용하면 열의 평균값을 구할 수 있습니다.
+- sum 함수를 사용하면 열에 있는 값을 전부 더합니다.
+
 
 
 #### 함수를 사용한 값과 다른 열의 값이 맞지 않는 경우
@@ -295,8 +298,55 @@ select *
 from books
 where pages = (select max(pages) from books);
 ```
-- where 조건문에 pages는 가장 높은 값을 출력하는 코드를 넣습니다
+- where 조건문에 pages는 가장 높은 값을 출력하는 코드를 넣습니다.
 
+
+#### having
+
+- HAVING 절은 SQL 쿼리에서 그룹 함수를 사용하여 그룹화된 결과를 필터링하는 데 사용됩니다.
+
+```SQL
+select released_year,avg(stock_quantity) as avg_stock
+from books
+group by released_year having avg_stock>=70;
+```
+- havig을 사용한 코드입니다.
+- group by로 그룹화된 released_year를 기준으로 stock_quantity의 평균값이 70 이상인 값을 출력하게 합니다.
+
+
+#### case 문과 와 if
+##### case
+- CASE 문은 SQL 쿼리에서 조건에 따라 다른 값을 반환하는 데 사용됩니다. CASE 문은 CASE 키워드로 시작하고, END 키워드로 끝납니다
+```SQL
+select *, 
+	case
+		when released_year >= 2000 then '최근책'
+        else '예전책'
+	end as type
+from books;
+```
+
+- 해당 코드처럼 입력하면 released_year가 2000 이상일때 '최근책'을 출력하게하고 그렇지 않으면 '예전책'을 출력하게 합니다.
+- when을 반복하여 여러가지 규칙을 넣을 수 있습니다.
+
+##### if()
+
+- if함수는 2개의 조건을 입력할때 사용합니다.
+- case 문보다 간단하게 쓸 수 있는 장점이 있습니다.
+```SQL
+select *, if(pages > 300, '긴책', '짧은책') as book_type
+from books;
+```
+- 해당 코드를 입력하면 pages가 300 초과인 것엔 '긴책', 아니면 '짧은책'을 출력하게 합니다.
+
+- 값에 NULL이 있으면 NULL을 지정 값으로 세팅하는 ifnull() 함수도 존재합니다.
+```SQL
+select id, title, author_fname, author_lname, released_year, 
+ifnull(stock_quantity, 0) as stock_quantity,
+pages
+from books;
+```
+- 해당 코드를 입력하면 stock_quantity의 NULL 값이 0으로 바껴서 출력됩니다.
 
 
 
