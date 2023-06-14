@@ -1,6 +1,6 @@
 [MySQL 환경설정](환경설정.md)
 
-[MySQL](MySQL.md)
+[MySQL 기본 설정과 문자열 다루기](MySQL.md)
 
 [시간, 날짜 데이터](날짜.md)
 
