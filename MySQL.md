@@ -17,7 +17,9 @@
 ### Full-text indexing
 -  전체 텍스트 색인(Full-text indexing)은 데이터베이스 시스템에서 텍스트 검색 기능을 향상시키기 위해 사용되는 기술입니다. 
 -  이를 통해 텍스트 필드 내의 단어나 용어에 대한 효율적인 검색이 가능해집니다.
-![20230614_105856](https://github.com/ijd1236/Database/assets/130967884/e584f567-d4d4-4ccf-9351-c35ca4809ae5)
+
+![image](https://github.com/ijd1236/Database/assets/130967884/6f7f84e0-e430-4a03-858f-b45ae75ff072)
+
 
 
 
@@ -26,7 +28,8 @@
 - 유니크한 값을 만들기 위한 작업입니다.
 - 입력 값의 중복을 막아줍니다.
 - 테이블 아래 index 에서 설정할 수 있습니다
- [image](https://github.com/ijd1236/Database/assets/130967884/850b4b95-438f-4393-820b-b905c1b007b2)
+
+![image](https://github.com/ijd1236/Database/assets/130967884/fcd22f94-245f-4296-a7d6-6575121e4ed0)
 
 
 
