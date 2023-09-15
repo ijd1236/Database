@@ -5,11 +5,15 @@
 use mysql;
 create user 'asd_db_user'@'%' identified by '1234';
 ```
--api서버에서 db에 접속할 아이디 생성
+- api서버에서 db에 접속할 아이디 생성
 - @'%'는 접속경로?를 말함.
-```grant ALL privileges on asd.* to 'asd_db_user'@'%';
+```
+grant ALL privileges on asd.* to 'asd_db_user'@'%';
+
 ```
 - 권한 주기(asd db의 모든 테이블)
+
+
 
 ![image](https://github.com/ijd1236/Database/assets/130967884/43f82431-6a93-4eac-83db-5216f4ec2c83)
 
