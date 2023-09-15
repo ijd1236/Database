@@ -1,13 +1,12 @@
 ## 메인 서버에서 스키마 생성, 해당 스키마를 다른 커넥션에서 사용하고 싶다
 
--- 서버가 DB에 접속할 수 있도록 계정 생성.
-
+-- 서버가 db에 접속할 수 있도록 계정 생성
 use mysql;
 create user 'asd_db_user'@'%' identified by '1234';
--- 권한부여
+-- api서버에서 db에 접속할 아이디 생성
+-- @'%'는 접속경로?를 말함.
 grant ALL privileges on asd.* to 'asd_db_user'@'%';
-
--- 테스트해본다. => MySQL Workbench 로
+-- 권한 주기(레시피db의 모든 테이블)
 
 ![image](https://github.com/ijd1236/Database/assets/130967884/43f82431-6a93-4eac-83db-5216f4ec2c83)
 
